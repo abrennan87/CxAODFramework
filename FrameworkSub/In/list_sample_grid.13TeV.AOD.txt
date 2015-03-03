@@ -1,0 +1,8 @@
+#monoW
+mc14_13TeV.191216.MadGraphPythia8_AU2MSTW2008LO_monoWjjSimDesSvdMed100m50.merge.AOD.e3457_s1982_s2008_r5787_r5853
+#mc14_13TeV.191225.MadGraphPythia8_AU2MSTW2008LO_monoWjjSimConSvdMed100m50.merge.AOD.e3457_s1982_s2008_r5787_r5853
+#monoZ
+#mc14_13TeV.191239.MadGraphPythia8_AU2MSTW2008LO_monoZjjSimSvdMed100m50.merge.AOD.e3457_s1982_s2008_r5787_r5853
+#ttbar
+#mc14_13TeV.110351.PowhegPythia_P2012_ttbar_allhad.merge.AOD.e3232_s1982_s2008_r5787_r5853
+#mc14_13TeV.110401.PowhegPythia_P2012_ttbar_nonallhad.merge.AOD.e2928_s1982_s2008_r5787_r5853
