@@ -74,16 +74,21 @@ int main(int argc, char* argv[]) {
   // sample_names.push_back("WtaunuB");
   // sample_names.push_back("WtaunuC");
   // sample_names.push_back("WtaunuL");
-  sample_names.push_back("ttbar");
   //sample_names.push_back("ttbar_YT");
   //sample_names.push_back("ttbar_YT_small");
   //sample_names.push_back("ttbar_small");
   // sample_names.push_back("singletop_t");
   // sample_names.push_back("singletop_s");
   // sample_names.push_back("singletop_Wt");
+  //sample_names.push_back("Zll");
+  //sample_names.push_back("Wlv");
+  //sample_names.push_back("singletop");
+  //sample_names.push_back("ttbar");
+  //sample_names.push_back("Zvv");
+  sample_names.push_back("my_t_tbar");			// stored on eos, ttbar samples as created by me
 
   // where to read data from
-  bool eos(false);
+  bool eos(false);					// changed
 
   // datasets copied to afs
   std::string afsdir("/afs/cern.ch/user/a/abrennan/testarea/downloaded_outputs/");		// Changed from /afs/cern.ch/user/y/ychou/private/monoWZH/Dataset/
@@ -92,17 +97,18 @@ int main(int argc, char* argv[]) {
   // datasets copied to eos
   TString CxAODver("CxAOD_00-00-05");
   TString xAODver("_p1784");
-  TString eosdir("/eos/atlas/atlasgroupdisk/phys-higgs/HSG5/Run2/VH/");
-  if (analysisType==0) 
-    eosdir+="HIGG5D1_";
-  else if (analysisType==1) 
-    eosdir+="HIGG5D2_";
-  else if (analysisType==2) 
-    eosdir+="HIGG2D4_";
-  else
-    std::cout << "Unknown Analysis Type " << analysisType << std::endl;
+  //TString eosdir("/eos/atlas/atlasgroupdisk/phys-higgs/HSG5/Run2/VH/");		// replaced with below
+  TString eosdir("/eos/atlas/user/a/abrennan/CxAOD/downloaded_outputs/");
+  //if (analysisType==0)								// commented out below 
+  //  eosdir+="HIGG5D1_";
+  //else if (analysisType==1) 
+  //  eosdir+="HIGG5D2_";
+  //else if (analysisType==2) 
+  //  eosdir+="HIGG2D4_";
+  //else
+  //  std::cout << "Unknown Analysis Type " << analysisType << std::endl;
   // 
-  eosdir+=comEnergy+xAODver+"/"+CxAODver+"/";
+  //eosdir+=comEnergy+xAODver+"/"+CxAODver+"/";						// commented out
 
   if (eos)
     std::cout << " Looking for directory " << eosdir << std::endl;

@@ -672,7 +672,7 @@ EL::StatusCode AnalysisReader :: execute ()
   if (m_isMC) 
     m_weight *=m_superDecorator.get(eventInfo,EventInfoFloatProps::MCEventWeight);
 
-  //std::cout << "m_weight " << m_weight << std::endl;
+  std::cout << "m_weight " << m_weight << std::endl;
   
   // Sherpa Vpt  
   if (m_isSherpaVJets) 
