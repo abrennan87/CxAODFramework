@@ -376,7 +376,7 @@ EL::StatusCode AnalysisReader :: histInitialize_monoWZH()
   
   //cutflow
   buffer = "Cutflow"; nbins = 10; min = 0.5; max = 10.5 ;
-  m_hist_mono_cutflow = new TH1F(TString(buffer),TString(buffer),nbins, min, max);
+  m_hist_mono_cutflow = new TH1D(TString(buffer),TString(buffer),nbins, min, max);
   for(unsigned int i=0; i<10; i++) {
     m_hist_mono_cutflow->GetXaxis()->SetBinLabel(i+1,cuts[i].c_str());
   }
@@ -590,6 +590,7 @@ EL::StatusCode AnalysisReader :: initialize ()
       return EL::StatusCode::FAILURE;
     }
     m_sumOfWeights_fix = new sumOfWeightsProvider(sumOfWeightsFile);
+    cout << "sumOfWeightsFile = " << sumOfWeightsFile << endl;
   }
   
   return EL::StatusCode::SUCCESS;
@@ -607,6 +608,16 @@ EL::StatusCode AnalysisReader :: execute ()
   // print every 10000 events
   if( (m_eventCounter % 10000) ==0 ) Info("execute()", "Event number = %i", m_eventCounter );
   m_eventCounter++;
+
+  if( m_eventCounter==1){
+    double weighted_value = m_hist_mono_cutflow->GetBinContent(m_hist_mono_cutflow->GetXaxis()->FindBin("All"));
+    cout << "weighted_value: " << weighted_value << endl;
+  }
+
+  if( m_eventCounter==41){
+    double weighted_value = m_hist_mono_cutflow->GetBinContent(m_hist_mono_cutflow->GetXaxis()->FindBin("All"));
+    cout << "weighted_value: " << weighted_value << endl;
+  }
 
   //----------------------------
   // Event information
@@ -672,7 +683,7 @@ EL::StatusCode AnalysisReader :: execute ()
   if (m_isMC) 
     m_weight *=m_superDecorator.get(eventInfo,EventInfoFloatProps::MCEventWeight);
 
-  std::cout << "m_weight " << m_weight << std::endl;
+  //std::cout << "m_weight " << m_weight << std::endl;
   
   // Sherpa Vpt  
   if (m_isSherpaVJets) 
@@ -1264,6 +1275,7 @@ EL::StatusCode AnalysisReader :: fill_monoWZH()
   bool pass_metcut = false;
   bool pass_jetmass = false;
   
+  cout << "Weight: " << m_weight << " Event: " << m_eventCounter << endl;
   m_hist_mono_cutflow->Fill(m_hist_mono_cutflow->GetXaxis()->FindBin("All"), m_weight);
   m_hist_mono_cutflow_noweight->Fill(m_hist_mono_cutflow_noweight->GetXaxis()->FindBin("All"));
 if(pass_presele)
@@ -1363,7 +1375,7 @@ if(pass_presele)
   
   //fill cutflow hist 
   
-  
+  cout << "weight check 2: " << m_weight << endl; 
  
   //m_hist_mono_pre_MET->Fill(met->met()/1000., m_weight);
   m_hist_mono_pre_MET->Fill(met->met()/1000.);
@@ -1837,7 +1849,7 @@ EL::StatusCode AnalysisReader :: histFinalize ()
   m_hist_mono_eff_MET->Divide(m_hist_mono_cutflow_mj_MET,m_hist_mono_pre_MET,1,1,"B");
 
   double yields;
-  float yields_All, yields_pre, yields_250, yields_350,  yields_fjet, yields_lep, yields_phot, yields_add, yields_met, yields_mj;
+  double yields_All, yields_pre, yields_250, yields_350,  yields_fjet, yields_lep, yields_phot, yields_add, yields_met, yields_mj;
   
   yields_All =  m_hist_mono_cutflow->GetBinContent(m_hist_mono_cutflow->GetXaxis()->FindBin("All"));
   yields_All *= 2000;

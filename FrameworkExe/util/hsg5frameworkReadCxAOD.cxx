@@ -83,15 +83,16 @@ int main(int argc, char* argv[]) {
   //sample_names.push_back("Zll");
   //sample_names.push_back("Wlv");
   //sample_names.push_back("singletop");
-  //sample_names.push_back("ttbar");
+  sample_names.push_back("ttbar");
   //sample_names.push_back("Zvv");
-  sample_names.push_back("my_t_tbar");			// stored on eos, ttbar samples as created by me
+  //sample_names.push_back("my_t_tbar");			// stored on eos, ttbar samples as created by me
 
   // where to read data from
   bool eos(false);					// changed
 
   // datasets copied to afs
-  std::string afsdir("/afs/cern.ch/user/a/abrennan/testarea/downloaded_outputs/");		// Changed from /afs/cern.ch/user/y/ychou/private/monoWZH/Dataset/
+  std::string afsdir("/afs/cern.ch/user/a/abrennan/testarea/downloaded_outputs/");   
+  //std::string afsdir("/afs/cern.ch/user/a/abrennan/EOS/atlas/user/a/abrennan/CxAOD/downloaded_outputs/");		// mount EOS ifirst, set eos to false, make this the 'local' location
   //std::string afsdir("/afs/cern.ch/work/t/thompson/public/DAOD/v0.0.5/");
 
   // datasets copied to eos

@@ -78,7 +78,7 @@ public:
   int m_analysisType;
   int m_eventCounter; //!
   bool m_isMC; //!
-  float m_weight; //!
+  double m_weight; //!
   float m_sumOfWeights; //!  correct for the luminosity of the MC file
   TString m_comEnergy; 
   bool m_isSherpaVJets; // is Sherpa file
@@ -99,7 +99,7 @@ public:
   TH1F* m_hist_mono_pre_jetpt; //!
   TH1F* m_hist_mono_pre_jeteta; //!
   //cutflow
-  TH1F* m_hist_mono_cutflow; //!
+  TH1D* m_hist_mono_cutflow; //!
   TH1F* m_hist_mono_cutflow_noweight; //!
   TH1F* m_hist_mono_cutflow_met250_MET; //!
   TH1F* m_hist_mono_cutflow_met350_MET; //!
