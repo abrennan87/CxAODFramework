@@ -88,6 +88,9 @@ public:
   
   //  TH1F* m_hist_0lep_; //!
   //monoWZH hists
+  // before pre-selection
+  TH1F* m_hist_mono_prepre_fatjetm; //!
+  TH1F* m_hist_mono_prepre_fatjetpt; //! 
   //pre-selection
   TH1F* m_hist_mono_pre_MET; //!
   TH1F* m_hist_mono_pre_METPhi; //!
@@ -104,11 +107,16 @@ public:
   TH1F* m_hist_mono_cutflow_met250_MET; //!
   TH1F* m_hist_mono_cutflow_met350_MET; //!
   TH1F* m_hist_mono_cutflow_fjet_MET; //!
-  TH1F* m_hist_mono_cutflow_lepveto_MET; //!
-  TH1F* m_hist_mono_cutflow_photveto_MET; //!
+  TH1F* m_hist_mono_cutflow_elveto_MET; //!
+  TH1F* m_hist_mono_cutflow_muveto_MET; //!
   TH1F* m_hist_mono_cutflow_jetveto_MET; //!
+  TH1F* m_hist_mono_cutflow_metjetOL_MET; //!
   TH1F* m_hist_mono_cutflow_met_MET; //!
-  TH1F* m_hist_mono_cutflow_mj_MET; //!
+  TH1F* m_hist_mono_cutflow_mjWZ_MET; //!
+  TH1F* m_hist_mono_cutflow_mjH_MET; //!
+  TH1F* m_hist_mono_cutflow_1subjet_MET; //!
+  TH1F* m_hist_mono_cutflow_2subjet_MET; //!
+  TH1F* m_hist_mono_cutflow_2btag_MET; //!
   TH1F* m_hist_mono_cutflow_Nsigfjet; //!
   TH1F* m_hist_mono_cutflow_fjetaddjetDeltaR; //!
     //monoWZH n-1
@@ -116,7 +124,9 @@ public:
   TH1F* m_hist_nminusone_met350; //!
   TH1F* m_hist_nminusone_fjet; //!
   TH1F* m_hist_nminusone_lepveto; //!
+  TH1F* m_hist_nminusone_photveto; //!
   TH1F* m_hist_nminusone_jetveto; //!
+  TH1F* m_hist_nminusone_metjetOL; //!
   TH1F* m_hist_nminusone_met500; //!
   TH1F* m_hist_nminusone_mj; //!
   TH1F* m_hist_mono_eff_MET; //!
