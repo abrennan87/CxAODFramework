@@ -526,6 +526,7 @@ EL::StatusCode AnalysisReader :: fileExecute ()
   // Flag if is Pt0 slice, to kill overlapping events. PtV slices only in 13TeV xAOD samples
   TString filename(inputfile->GetName());
   m_isSherpaPt0VJets= (filename.Contains("Pt0") && m_comEnergy=="13TeV") ? true : false;
+  if(filename.Contains("Sherpa_CT10_W") && filename.Contains("Pt0")  && m_comEnergy=="13TeV") m_SherpaPt0VJetsCut = 40000;
 
   // general Sherpa flag
   m_isSherpaVJets = (filename.Contains("Sherpa")) ? true : false;
@@ -1625,40 +1626,32 @@ if(pass_presele)
 
   if(debug) std::cout << "Done fill_hist" << std::endl;
  
-  //fill n-1 histogram												
-  if(pass_fatjet && pass_lepveto && pass_photveto && pass_jetveto && pass_jetOL && pass_metcut && pass_jetmass_WZ)
+  //fill n-1 histogram
+  if(pass_fatjet && pass_elveto && pass_muveto && pass_jetveto && pass_jetOL && pass_metcut && pass_jetmass_WZ)
   {
-        m_hist_nminusone_met250->Fill(met->met()/1000., m_weight);
-  }
-  if(pass_met250 && pass_fatjet && pass_lepveto && pass_photveto && pass_jetveto && pass_jetOL && pass_metcut && pass_jetmass_WZ)
+	m_hist_nminusone_met250->Fill(met->met()/1000., m_weight);
+  }								
+  if(pass_met250 && pass_elveto && pass_muveto && pass_jetveto && pass_jetOL && pass_metcut && pass_jetmass_WZ)
   {
-        m_hist_nminusone_met350->Fill(met->met()/1000., m_weight);
+	m_hist_nminusone_fjet->Fill(fatsigJets.size(), m_weight);
   }
-  if(pass_met250 && pass_lepveto && pass_photveto && pass_jetveto && pass_jetOL && pass_metcut && pass_jetmass_WZ)
+  if(pass_met250 && pass_fatjet && pass_jetveto && pass_jetOL && pass_metcut && pass_jetmass_WZ)				// split into two with el and mu
   {
-        m_hist_nminusone_fjet->Fill(fatsigJets.size(), m_weight);
+	m_hist_nminusone_lepveto->Fill((vetoEls.size()+vetoMus.size()), m_weight);
   }
-  if(pass_met250 && pass_fatjet && pass_photveto && pass_jetveto && pass_jetOL && pass_metcut && pass_jetmass_WZ)		
+  if(pass_met250 && pass_fatjet && pass_elveto && pass_muveto && pass_jetOL && pass_metcut && pass_jetmass_WZ)
   {
-        m_hist_nminusone_lepveto->Fill((vetoEls.size()+vetoMus.size()), m_weight);
-  }
-  //if(pass_met250 && pass_fatjet && pass_lepveto && pass_jetveto && pass_jetOL && pass_metcut && pass_jetmass_WZ)           
-  //{
-  //      m_hist_nminusone_photveto->Fill(vetoPhots.size(), m_weight);
-  //}
-  if(pass_met250 && pass_fatjet && pass_lepveto && pass_photveto && pass_jetOL && pass_metcut && pass_jetmass_WZ)
+	m_hist_nminusone_jetveto->Fill(sigJets.size(), m_weight);
+  }				
+  if(pass_met250 && pass_fatjet && pass_elveto && pass_muveto && pass_jetveto && pass_metcut && pass_jetmass_WZ)		// This should be improved to show the overlap between all jets and MET
   {
-        m_hist_nminusone_jetveto->Fill(sigJets.size(), m_weight);
+	m_hist_nminusone_metjetOL->Fill(num_close_jets, m_weight); 
   }
-  if(pass_met250 && pass_fatjet && pass_lepveto && pass_photveto && pass_jetveto && pass_metcut && pass_jetmass_WZ)
-  {
-        m_hist_nminusone_metjetOL->Fill(num_close_jets, m_weight);											// This should be improved to show the overlap between all jets and MET
-  }
-  if(pass_met250 && pass_fatjet && pass_lepveto && pass_photveto && pass_jetveto && pass_jetOL && pass_jetmass_WZ)
+  if(pass_met250 && pass_fatjet && pass_elveto && pass_muveto && pass_jetveto && pass_jetOL && pass_jetmass_WZ)
   {
         m_hist_nminusone_met500->Fill(met->met()/1000., m_weight);
   }
-  if(pass_met250 && pass_fatjet && pass_lepveto && pass_photveto && pass_jetveto && pass_jetOL && pass_metcut)
+  if(pass_met250 && pass_fatjet && pass_elveto && pass_muveto && pass_jetveto && pass_jetOL && pass_metcut)
   {
         m_hist_nminusone_mj->Fill(lead_mass/1000., m_weight);
   }
