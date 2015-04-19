@@ -1,7 +1,7 @@
 # https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt1314TeV#s_13_0_TeV
-161805	2.1062E-01	0.577	1.0		Pythia8_AU2CTEQ6L1_WH125_lnubb
-161849	7.8420E+10	0.577	9.9693E-01	Pythia8_AU2CTEQ6L1_ZH125_nunubb
-161827	3.5784E-02	0.577	1.0		Pythia8_AU2CTEQ6L1_ZH125_llbb
+161805	1.380000	0.577	0.324000	Pythia8_AU2CTEQ6L1_WH125_lnubb
+161849	0.869600	0.577	0.200000	Pythia8_AU2CTEQ6L1_ZH125_nunubb
+161827	0.869600	0.577	0.100974	Pythia8_AU2CTEQ6L1_ZH125_llbb
 # https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/CxAODDC14#Samples_and_Status -> approx AMI numbers
 167740	18795.00	1.0	0.017789	Sherpa_CT10_WenuMassiveCBPt0_BFilter
 167741	18804.00	1.0	0.062919	Sherpa_CT10_WenuMassiveCBPt0_CJetFilterBVeto
@@ -20,7 +20,7 @@
 167781	6.235700	1.0	0.629970	Sherpa_CT10_WenuMassiveCBPt280_500_CJetVetoBVeto
 167788	0.514260	1.0	0.117910	Sherpa_CT10_WenuMassiveCBPt500_BFilter
 167789	0.520840	1.0	0.288870	Sherpa_CT10_WenuMassiveCBPt500_CJetFilterBVeto
-167790	5.1306E-01	1.0	0.597380	Sherpa_CT10_WenuMassiveCBPt500_CJetVetoBVeto
+167790	0.597380	1.0	0.597380	Sherpa_CT10_WenuMassiveCBPt500_CJetVetoBVeto
 167743	18793.00	1.0	0.017930	Sherpa_CT10_WmunuMassiveCBPt0_BFilter
 167744	18788.00	1.0	0.058290	Sherpa_CT10_WmunuMassiveCBPt0_CJetFilterBVeto
 167745	18797.00	1.0	0.926480	Sherpa_CT10_WmunuMassiveCBPt0_CJetVetoBVeto
@@ -56,7 +56,7 @@
 167787	6.311600	1.0	0.631160	Sherpa_CT10_WtaunuMassiveCBPt280_500_CJetVetoBVeto
 167794	0.516910	1.0	0.118720	Sherpa_CT10_WtaunuMassiveCBPt500_BFilter
 167795	0.513620	1.0	0.291080	Sherpa_CT10_WtaunuMassiveCBPt500_CJetFilterBVeto
-167796	5.1446E-01	1.0	0.599840	Sherpa_CT10_WtaunuMassiveCBPt500_CJetVetoBVeto
+167796	0.599840	1.0	0.599840	Sherpa_CT10_WtaunuMassiveCBPt500_CJetVetoBVeto
 167749	1928.900	1.0	0.038075	Sherpa_CT10_ZeeMassiveCBPt0_BFilter
 167750	1926.800	1.0	0.328280	Sherpa_CT10_ZeeMassiveCBPt0_CFilterBVeto
 167751	1938.800	1.0	0.635740	Sherpa_CT10_ZeeMassiveCBPt0_CVetoBVeto
@@ -72,7 +72,7 @@
 167833	0.068370	1.0	0.145610	Sherpa_CT10_ZeeMassiveCBPt500_BFilter
 167834	0.068450	1.0	0.434080	Sherpa_CT10_ZeeMassiveCBPt500_CFilterBVeto
 167835	0.068500	1.0	0.419060	Sherpa_CT10_ZeeMassiveCBPt500_CVetoBVeto
-167752	1929.900	1.0	3.8283E-02	Sherpa_CT10_ZmumuMassiveCBPt0_BFilter
+167752	1929.900	1.0	0.382830	Sherpa_CT10_ZmumuMassiveCBPt0_BFilter
 167753	1927.000	1.0	0.326470	Sherpa_CT10_ZmumuMassiveCBPt0_CFilterBVeto
 167754	1936.400	1.0	0.635750	Sherpa_CT10_ZmumuMassiveCBPt0_CVetoBVeto
 167800	66.74400	1.0	0.101500	Sherpa_CT10_ZmumuMassiveCBPt70_140_BFilter
@@ -117,8 +117,8 @@
 167842	0.379210	1.0	0.146850	Sherpa_CT10_ZnunuMassiveCBPt500_BFilter
 167843	0.378430	1.0	0.436760	Sherpa_CT10_ZnunuMassiveCBPt500_CFilterBVeto
 167844	0.376940	1.0	0.415620	Sherpa_CT10_ZnunuMassiveCBPt500_CVetoBVeto
-110351	6.9604E+02	1.0	0.457280	PowhegPythia_P2012_ttbar_allhad
-110401	6.9584E+02	1.0	0.543160	PowhegPythia_P2012_ttbar_nonallhad
+110351	69.60400	1.0	0.457280	PowhegPythia_P2012_ttbar_allhad
+110401	69.58400	1.0	0.543160	PowhegPythia_P2012_ttbar_nonallhad
 110302	3.351400	1.0	1.000000	PowhegPythia_P2012_st_schan_lep
 110070	43.75500	1.0	1.000000	PowhegPythia_P2012_singletop_tchan_lept_top
 110071	25.77800	1.0	1.000000	PowhegPythia_P2012_singletop_tchan_lept_antitop
