@@ -119,6 +119,12 @@ public:
   TH1F* m_hist_mono_cutflow_2btag_MET; //!
   TH1F* m_hist_mono_cutflow_Nsigfjet; //!
   TH1F* m_hist_mono_cutflow_fjetaddjetDeltaR; //!
+  TH1F* m_hist_monoH_C2_postmfj; //!
+  TH1F* m_hist_monoH_D2_postmfj; //!
+  TH1F* m_hist_monoH_Tau21_postmfj; //!
+  TH1F* m_hist_monoH_C2_postcuts; //!
+  TH1F* m_hist_monoH_D2_postcuts; //!
+  TH1F* m_hist_monoH_Tau21_postcuts; //!
     //monoWZH n-1
   TH1F* m_hist_nminusone_met250; //!
   TH1F* m_hist_nminusone_met350; //!
@@ -130,6 +136,23 @@ public:
   TH1F* m_hist_nminusone_met500; //!
   TH1F* m_hist_nminusone_mj; //!
   TH1F* m_hist_mono_eff_MET; //!
+  // monoH n-1
+  TH1F* m_hist_nminus1_monoH_leadfj_pt; //!
+  TH1F* m_hist_nminus1_monoH_leadfj_eta; //!
+  TH1F* m_hist_nminus1_monoH_fj_mult; //!
+  TH1F* m_hist_nminus1_monoH_el_mult; //!
+  TH1F* m_hist_nminus1_monoH_mu_mult; //!
+  TH1F* m_hist_nminus1_monoH_antiktjets_pt; //!
+  TH1F* m_hist_nminus1_monoH_antiktjets_eta; //!
+  TH1F* m_hist_nminus1_monoH_antiktjet_dRfj; //!
+  TH1F* m_hist_nminus1_monoH_antiktjet_mult; //!
+  TH1F* m_hist_nminus1_monoH_antiktjet_dPhiMET; //!
+  TH1F* m_hist_nminus1_monoH_met500; //!
+  TH1F* m_hist_nminus1_monoH_leadfj_m; //!
+  TH1F* m_hist_nminus1_monoH_bsubJets_mult; //!
+  TH1F* m_hist_nminus1_monoH_subJet_MV1; //!
+  TH1F* m_hist_nminus1_monoH_bjet_dRfj; //!
+  TH1F* m_hist_nminus1_monoH_bjet_mult; //!
   // 0 lep hists
   TH1F* m_hist2j_0lep_dRBB; //!
   TH1F* m_hist2j_0lep_dEtaBB; //!

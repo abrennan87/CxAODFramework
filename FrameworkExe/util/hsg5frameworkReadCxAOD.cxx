@@ -80,26 +80,87 @@ int main(int argc, char* argv[]) {
   // sample_names.push_back("singletop_t");
   // sample_names.push_back("singletop_s");
   // sample_names.push_back("singletop_Wt");
-  //sample_names.push_back("Zll");
-  //sample_names.push_back("Wlv");
-  //sample_names.push_back("singletop");
-  sample_names.push_back("ttbar");
+  ////sample_names.push_back("Zll");
+  ////sample_names.push_back("Wlv");
+  ////sample_names.push_back("top");
+  //sample_names.push_back("ttbar_small");
+  //sample_names.push_back("ttbar");
   //sample_names.push_back("Zvv");
   //sample_names.push_back("my_t_tbar");			// stored on eos, ttbar samples as created by me
+  //sample_names.push_back("top_small");
+  //sample_names.push_back("Zll_small");
+
+
+  //sample_names.push_back("place_name");
+
+  //sample_names.push_back("test_samples_032315");
+  //sample_names.push_back("monoZjjIsrD1m50");
+  //sample_names.push_back("monoWjjIsrDesD1m50");
+  //sample_names.push_back("monoWjjIsrDesD1m1300");
+  //sample_names.push_back("monoWjjIsrDesD5m50");
+  //sample_names.push_back("monoWjjIsrDesD5m1300");
+  //sample_names.push_back("monoWjjIsrDesD9m50");
+  //sample_names.push_back("monoWjjIsrDesD9m1300");
+//////sample_names.push_back("monoWjjIsrConD1m50");
+//  //sample_names.push_back("monoWjjIsrConD1m1300");
+//  //sample_names.push_back("monoWjjIsrConD5m50");
+//  //sample_names.push_back("monoWjjIsrConD5m1300");
+//  //sample_names.push_back("monoWjjIsrConD9m50");
+//  //sample_names.push_back("monoWjjIsrConD9m1300");
+  //sample_names.push_back("monoZjjIsrD1m50");
+  //sample_names.push_back("monoZjjIsrD1m1300");
+  sample_names.push_back("monoZjjIsrD5m50");
+  //sample_names.push_back("monoZjjIsrD5m1300");
+  //sample_names.push_back("monoZjjIsrD9m50");
+  //sample_names.push_back("monoZjjIsrD9m1300");
+  //sample_names.push_back("monoHbb_mx1_xdxhDh");
+  //sample_names.push_back("monoHbb_mx65_xdxhDh");
+  //sample_names.push_back("monoHbb_mx1000_xdxhDh");
+  //sample_names.push_back("monoHbb_mx1_xgxFhDh");
+  //sample_names.push_back("monoHbb_mx65_xgxFhDh");
+  //sample_names.push_back("monoHbb_mx1000_xgxFhDh");
+  //sample_names.push_back("monoHbb_mx1_zpzp100");
+  //sample_names.push_back("monoHbb_mx65_zpzp100");
+  //sample_names.push_back("monoHbb_mx1000_zpzp100");
+  
+  //sample_names.push_back("Zvv");
+  //sample_names.push_back("Zll");
+  //sample_names.push_back("Wenu");
+  //sample_names.push_back("Wmunu");
+  //sample_names.push_back("Wtaunu");
+  //sample_names.push_back("QCD");
+  //sample_names.push_back("gammajet");
+  //sample_names.push_back("singletop");
+  //sample_names.push_back("ttbar_allhad");
+  //sample_names.push_back("ttbar_nonallhad");
+  //sample_names.push_back("VH"); 
+ 
+  //sample_names.push_back("singletop_110070");
+  //sample_names.push_back("singletop_110071");
+  //sample_names.push_back("singletop_110302");
+  //sample_names.push_back("singletop_110305");
 
   // where to read data from
   bool eos(false);					// changed
 
   // datasets copied to afs
-  std::string afsdir("/afs/cern.ch/user/a/abrennan/testarea/downloaded_outputs/");   
-  //std::string afsdir("/afs/cern.ch/user/a/abrennan/EOS/atlas/user/a/abrennan/CxAOD/downloaded_outputs/");		// mount EOS ifirst, set eos to false, make this the 'local' location
+  //std::string afsdir("/afs/cern.ch/user/a/abrennan/testarea/downloaded_outputs/");   
+  //std::string afsdir("/afs/cern.ch/user/a/abrennan/EOS2/atlas/user/a/abrennan/CxAOD/abrennan_CxAODs/");		// mount EOS ifirst, set eos to false, make this the 'local' location
+  //std::string afsdir("/afs/cern.ch/user/a/abrennan/EOS2/atlas/user/a/abrennan/CxAOD/abrennan_CxAODs/signal_samples/"); 
+  //std::string afsdir("/afs/cern.ch/user/a/abrennan/EOS/atlas/user/a/abrennan/CxAOD/HIGG5D1_CxAODs/");
+  //std::string afsdir("/afs/cern.ch/user/a/abrennan/EOS2/atlas/user/a/abrennan/CxAOD/Arturo_CxAODs/");
   //std::string afsdir("/afs/cern.ch/work/t/thompson/public/DAOD/v0.0.5/");
+  //std::string afsdir("/imports/home/ameliajb/workarea/CxAOD_samples/walkthrough_sample_set/April15/");
+  std::string afsdir("/imports/home/ameliajb/workarea/CxAOD_samples/walkthrough_sample_set/smaller_samples/");		// use for signal samples
+  //std::string afsdir("/imports/home/ameliajb/workarea/CxAOD_samples/");
 
   // datasets copied to eos
   TString CxAODver("CxAOD_00-00-05");
   TString xAODver("_p1784");
   //TString eosdir("/eos/atlas/atlasgroupdisk/phys-higgs/HSG5/Run2/VH/");		// replaced with below
-  TString eosdir("/eos/atlas/user/a/abrennan/CxAOD/downloaded_outputs/");
+  //TString eosdir("/eos/atlas/user/a/abrennan/CxAOD/downloaded_outputs/");
+  //TString eosdir("/eos/atlas/user/a/abrennan/CxAOD/abrennan_CxAODs/signal_samples/");
+  TString eosdir("/eos/atlas/user/a/abrennan/CxAOD/Walkthrough2_samples/April13/");
   //if (analysisType==0)								// commented out below 
   //  eosdir+="HIGG5D1_";
   //else if (analysisType==1) 
@@ -127,6 +188,9 @@ int main(int argc, char* argv[]) {
     std::string sample_name(sample_names.at(isamp));
     std::string sample_dir(dataset_dir+sample_name);
 
+    std::cout << "sample directory is " << sample_dir << std::endl;		
+    std::cout << "sample name is " << sample_name << std::endl;                     
+
     if (!eos) {
       bool direxists=gSystem->OpenDirectory (sample_dir.c_str());
       if (!direxists) {
@@ -139,10 +203,12 @@ int main(int argc, char* argv[]) {
     if (eos) {
       SH::DiskListEOS list(sample_dir,"root://eosatlas/"+sample_dir );
       //SH::DiskListEOS list("eosatlas.cern.ch", sample_dir);
-      SH::scanSingleDir (sampleHandler, sample_name, list, "*outputLabel*") ;
+      //SH::scanSingleDir (sampleHandler, sample_name, list, "*outputLabel*") ;
+      SH::scanSingleDir (sampleHandler, sample_name, list, "*data_CxAOD*") ;
     } else {
       SH::DiskListLocal list(sample_dir);
-      SH::scanSingleDir (sampleHandler, sample_name, list, "*outputLabel*") ;
+      //SH::scanSingleDir (sampleHandler, sample_name, list, "*outputLabel*") ;
+      SH::scanSingleDir (sampleHandler, sample_name, list, "*data_CxAOD*") ;
     }
 
     //
